@@ -12,6 +12,8 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 ```
+8. Angular flex
+`npm install @angular/flex-layout`
 ---
 ### B. Server
 1. firebase init
