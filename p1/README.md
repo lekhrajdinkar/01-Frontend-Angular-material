@@ -20,5 +20,10 @@
 2. firebase project ID  : ng7-mat
 ---
 
+### C. Side Navigation / Toolbar
+1. mat-nav-list -->  mat-list-item ( as directive on a, or as comp )--> mat-icon
+
+
+
 
 
