@@ -13,6 +13,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
+import { NewTrainingComponent } from './training/new-training/new-training.component';
+import { PastTrainingComponent } from './training/past-training/past-training.component';
+import { CurrentTrainingComponent } from './training/current-training/current-training.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { FormsModule } from '@angular/forms';
     SidenavListComponent,
     TrainingComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    NewTrainingComponent,
+    PastTrainingComponent,
+    CurrentTrainingComponent
   ],
   imports: [
     BrowserModule,
