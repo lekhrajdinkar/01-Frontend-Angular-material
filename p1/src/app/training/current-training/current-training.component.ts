@@ -7,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CurrentTrainingComponent implements OnInit {
 
-  progress = 20;
-  constructor() { }
+  progress = 0; 
+  timer ;
 
+  constructor() { }
+  
   ngOnInit() {
+    this.startOrResumeTimer();
+  }
+
+  startOrResumeTimer() {
+    this.timer = setInterval(() => {
+      this.progress = this.progress + 20;
+      if (this.progress >= 100) { clearInterval(this.timer); }
+    }, 1000);
   }
 
 }
