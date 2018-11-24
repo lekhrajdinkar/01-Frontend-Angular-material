@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { NewTrainingComponent } from './training/new-training/new-training.component';
 import { PastTrainingComponent } from './training/past-training/past-training.component';
 import { CurrentTrainingComponent } from './training/current-training/current-training.component';
+import { StopTrainingComponent } from './training/current-training/stop-training.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CurrentTrainingComponent } from './training/current-training/current-tr
     SignupComponent,
     NewTrainingComponent,
     PastTrainingComponent,
-    CurrentTrainingComponent
+    CurrentTrainingComponent,
+    StopTrainingComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +42,7 @@ import { CurrentTrainingComponent } from './training/current-training/current-tr
 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [StopTrainingComponent]
 })
 export class AppModule { }
