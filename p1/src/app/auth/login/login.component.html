@@ -11,7 +11,7 @@
   
       <mat-form-field>
         <input type="password" matInput placeholder="Your password" name="password" ngModel #pwInput="ngModel"
-        equired minlength="6">
+        required minlength="6">
         <mat-hint align="end">{{ pwInput.value?.length }} / 6</mat-hint>
         <mat-error>Password is missing</mat-error>
       </mat-form-field>

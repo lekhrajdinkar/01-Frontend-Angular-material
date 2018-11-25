@@ -9,11 +9,12 @@ import { AuthService } from 'src/app/auth/auth.service';
 export class HeaderComponent implements OnInit{
   @Output() sidenavToggle = new EventEmitter<void>();
   isAuth = false; 
+  authSubscription ;
 
   constructor(private authSrv: AuthService) { }
 
   ngOnInit() { 
-    this.authSrv.authChange.subscribe((authStatus) => { this.isAuth = authStatus;} );
+    this.authSubscription = this.authSrv.authChange.subscribe((authStatus) => { this.isAuth = authStatus;} );
    }
 
   onToggleSidenav() {
@@ -22,5 +23,9 @@ export class HeaderComponent implements OnInit{
 
   onLogout(){
     this.authSrv.logout();
+  }
+
+  ngOnDestroy() {
+    this.authSubscription.unsubscribe();
   }
 }

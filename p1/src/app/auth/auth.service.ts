@@ -37,6 +37,7 @@ export class AuthService
 
   //2. login
   login(authData: AuthData) {
+    console.log(authData);
     this.user = {
       email: authData.email,
       userId: Math.round(Math.random() * 10000).toString()
