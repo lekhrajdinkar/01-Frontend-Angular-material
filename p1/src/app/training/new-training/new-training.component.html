@@ -8,9 +8,9 @@
       <mat-card-content fxLayoutAlign="center">
 
         <mat-form-field>
-          <mat-select placeholder="Select Exercise" ngModel name="exercise">
+          <mat-select placeholder="Select Exercise" ngModel name="exercise" required>
 
-            <mat-option *ngFor="let item of exercises" value="item"> {{item.name}}</mat-option>
+            <mat-option *ngFor="let item of exercises" [value]="item.id"> {{item.name}}</mat-option>
 
             <!-- <mat-option value="crunches">
               Squats
@@ -30,7 +30,7 @@
       </mat-card-content>
 
       <mat-card-actions fxLayoutAlign="center">
-          <button mat-mini-fab color="primary" type="submit" (click)="onStartTraining(f)">start</button>
+          <button mat-mini-fab color="primary" type="submit" (click)="onStartTraining(f)" [disabled]="f.invalid"> start</button>
         <!-- <button type="submit" mat-button color="primary">Start</button> -->
       </mat-card-actions>
 

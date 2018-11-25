@@ -22,7 +22,7 @@ export class NewTrainingComponent implements OnInit {
 
   onStartTraining(form: NgForm){
     // this.trainingStart.emit();  // Invoke srv method, srv will emit event/subject.
-
+    console.log(form.value.exercise);
     this.trainingService.startExercise(form.value.exercise);
   }
 

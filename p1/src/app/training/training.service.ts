@@ -11,12 +11,15 @@ export class TrainingService
   private availableExercises: Exercise[] = [
     { id: 'crunches', name: 'Crunches', duration: 30, calories: 8 },
     { id: 'touch-toes', name: 'Touch Toes', duration: 180, calories: 15 },
-    { id: 'side-lunges', name: 'Side Lunges', duration: 120, calories: 18 },
-    { id: 'burpees', name: 'Burpees', duration: 60, calories: 8 }
+    { id: 'biceps-curl', name: 'Biceps Curl', duration: 120, calories: 18 },
+    { id: 'chest-press', name: 'Chest Press', duration: 60, calories: 8 }
   ];
   
   //Evevt - get fire whenever currentOngoing Execise will get changed
   exerciseChanged = new Subject<Exercise>(); 
+
+  //Adding one more property to store COMPLETE and CANCELLED exercises.
+  private exercises: Exercise[] = [] ;
 
   //============================================
   startExercise(selectedId: string) {
@@ -32,6 +35,29 @@ export class TrainingService
   //get current execise
   getRunningExercise() {
     return { ...this.runningExercise };
+  }
+
+  // Complete exercise
+  completeExercise(){
+    this.exercises.push(
+      {...this.runningExercise, date: new Date, state:'completed'}
+    )
+    this.runningExercise = null;
+    this.exerciseChanged.next(null);
+  }
+
+  //Cancel Exercise
+  cancelExercise(progress: number) {
+    this.exercises.push({
+      ...this.runningExercise,
+      duration: this.runningExercise.duration * (progress / 100),
+      calories: this.runningExercise.calories * (progress / 100),
+      date: new Date(),
+      state: 'cancelled'
+    });
+
+    this.runningExercise = null;
+    this.exerciseChanged.next(null);
   }
 
 }
