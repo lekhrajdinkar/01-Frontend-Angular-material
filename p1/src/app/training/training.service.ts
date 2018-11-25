@@ -60,4 +60,9 @@ export class TrainingService
     this.exerciseChanged.next(null);
   }
 
+  //Get Execise history
+  getCompletedOrCancelledExercises() {
+    return this.exercises.slice();
+  }
+
 }
