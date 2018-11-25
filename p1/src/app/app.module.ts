@@ -19,6 +19,7 @@ import { CurrentTrainingComponent } from './training/current-training/current-tr
 import { StopTrainingComponent } from './training/current-training/stop-training.component';
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth.guard';
+import { TrainingService } from './training/training.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,7 @@ import { AuthGuard } from './auth/auth.guard';
     FormsModule,
 
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, TrainingService],
   bootstrap: [AppComponent],
   entryComponents: [StopTrainingComponent]
 })
