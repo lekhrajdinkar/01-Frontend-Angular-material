@@ -23,7 +23,7 @@ export class CoursesService
     }
 
     findAllCourseLessons(courseId:number): Observable<Lesson[]> {
-        return this.http.get('/api/lessons', {
+        return this.http.get('/https://ng7-mat.firebaseio.com/lession.json', {
             params: new HttpParams()
                 .set('courseId', courseId.toString())
                 .set('pageNumber', "0")
