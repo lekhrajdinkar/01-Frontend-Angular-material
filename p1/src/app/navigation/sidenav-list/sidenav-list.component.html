@@ -5,11 +5,14 @@
     <span class="nav-caption">Signup</span>
   </a>
   
+
   <a *ngIf="!isAuth" mat-list-item routerLink="/login" (click)="onClose()" >
     <mat-icon>input</mat-icon>
     <span class="nav-caption">Login</span>
   </a>
   
+  <div *ngIf="isAuth"><hr><h5>Fitness Tracker</h5><span class="badge badge-info">login</span></div> 
+
   <a *ngIf="isAuth"mat-list-item routerLink="/training" (click)="onClose()" >
     <mat-icon>fitness_center</mat-icon>
     <span class="nav-caption">Training</span>
@@ -23,9 +26,7 @@
     </button>
   </mat-list-item>
 
-  <hr>
-
-  <h5>Course App</h5>
+  <div><hr><h5>Course App</h5></div> 
 
   <a mat-list-item routerLink="/course" (click)="onClose()" >
     <mat-icon>question_answer</mat-icon>
