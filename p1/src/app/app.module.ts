@@ -20,6 +20,7 @@ import { StopTrainingComponent } from './training/current-training/stop-training
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth.guard';
 import { TrainingService } from './training/training.service';
+import { CourseAppModule } from './course-app/course-app.module';
 
 @NgModule({
   declarations: [
@@ -42,10 +43,13 @@ import { TrainingService } from './training/training.service';
     AppRoutingModule,
     FlexLayoutModule,
     FormsModule,
-
+    CourseAppModule,
   ],
+
   providers: [AuthService, AuthGuard, TrainingService],
+
   bootstrap: [AppComponent],
+
   entryComponents: [StopTrainingComponent]
 })
 export class AppModule { }

@@ -1,0 +1,19 @@
+<div class="courses-panel">
+
+    <h3>All Courses</h3>
+
+    <mat-tab-group>
+
+        <!-- TAB 1 -->
+        <mat-tab label="Beginners">
+            <courses-card-list [courses]="beginnerCourses$ | async"> </courses-card-list>
+        </mat-tab>
+
+        <!-- TAB 2 -->
+        <mat-tab label="Advanced">
+            <courses-card-list [courses]="advancedCourses$ | async"></courses-card-list>
+        </mat-tab>
+
+    </mat-tab-group>
+
+</div>
