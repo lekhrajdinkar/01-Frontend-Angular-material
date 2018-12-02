@@ -18,10 +18,8 @@ export class CoursesService
     }
 
     findAllCourses(): Observable<Course[]> {
-        return this.http.get('/api/courses')
-            .pipe(
-                map(res => res['payload']) // return payload.
-            );
+        return this.http.get<Course[]>('https://ng7-mat.firebaseio.com/courses.json')
+            //.pipe(map(res => res['payload']));
     }
 
     findAllCourseLessons(courseId:number): Observable<Lesson[]> {

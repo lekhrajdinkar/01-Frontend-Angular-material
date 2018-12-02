@@ -41,9 +41,6 @@ export class HomeComponent implements OnInit {
         this.beginnerCourses = courses_local.filter(course => course.category === 'BEGINNER');
         this.advancedCourses = courses_local.filter(course => course.category === 'ADVANCED');
 
-        //========================
-
-
     }
 
 }
