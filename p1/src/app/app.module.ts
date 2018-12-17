@@ -21,6 +21,7 @@ import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth.guard';
 import { TrainingService } from './training/training.service';
 import { CourseAppModule } from './course-app/course-app.module';
+import { bootstrapP1 } from './p3/bootstrap4/home/home.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { CourseAppModule } from './course-app/course-app.module';
     PastTrainingComponent,
     CurrentTrainingComponent,
     StopTrainingComponent,
+    bootstrapP1
   ],
   imports: [
     BrowserModule,
