@@ -8,6 +8,7 @@ import { TrainingComponent } from './training/training.component';
 import { AuthGuard } from './auth/auth.guard';
 import { HomeComponent } from './course-app/home/home.component';
 import { bootstrapP1 } from './p3/bootstrap4/home/home.component';
+import { GlozzomComponent } from './p4-bootstrap4/glozzom/glozzom.component';
 
 //Child route for Course Application
 const courseAppRoutes: Routes = [
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: 'training', component: TrainingComponent, canActivate: [AuthGuard]},
   { path: 'course', children : courseAppRoutes},
 
-  { path: 'b4', component : bootstrapP1}
+  { path: 'p3bs4', component : bootstrapP1},
+  { path: 'p4bs4', component : GlozzomComponent},
 
 ];
 

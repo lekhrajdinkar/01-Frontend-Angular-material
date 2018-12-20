@@ -22,6 +22,8 @@ import { AuthGuard } from './auth/auth.guard';
 import { TrainingService } from './training/training.service';
 import { CourseAppModule } from './course-app/course-app.module';
 import { bootstrapP1 } from './p3/bootstrap4/home/home.component';
+import { GlozzomComponent } from './p4-bootstrap4/glozzom/glozzom.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { bootstrapP1 } from './p3/bootstrap4/home/home.component';
     PastTrainingComponent,
     CurrentTrainingComponent,
     StopTrainingComponent,
-    bootstrapP1
+    bootstrapP1,
+    GlozzomComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +49,7 @@ import { bootstrapP1 } from './p3/bootstrap4/home/home.component';
     FlexLayoutModule,
     FormsModule,
     CourseAppModule,
+    MDBBootstrapModule.forRoot(),
   ],
 
   providers: [AuthService, AuthGuard, TrainingService],
