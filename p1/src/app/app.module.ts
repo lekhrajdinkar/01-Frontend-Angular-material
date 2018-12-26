@@ -24,6 +24,8 @@ import { CourseAppModule } from './course-app/course-app.module';
 import { bootstrapP1 } from './p3/bootstrap4/home/home.component';
 import { GlozzomComponent } from './p4-bootstrap4/glozzom/glozzom.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { FaInputComponent } from './lekhraj-lib/fa-input/fa-input.component';
+import { InputDir1Directive } from './lekhraj-lib/common/input-dir1.directive';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     CurrentTrainingComponent,
     StopTrainingComponent,
     bootstrapP1,
-    GlozzomComponent
+    GlozzomComponent,
+    FaInputComponent,
+    InputDir1Directive
   ],
   imports: [
     BrowserModule,
