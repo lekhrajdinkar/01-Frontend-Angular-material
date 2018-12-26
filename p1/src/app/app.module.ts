@@ -26,6 +26,8 @@ import { GlozzomComponent } from './p4-bootstrap4/glozzom/glozzom.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FaInputComponent } from './lekhraj-lib/fa-input/fa-input.component';
 import { InputDir1Directive } from './lekhraj-lib/common/input-dir1.directive';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
 
 @NgModule({
   declarations: [
@@ -54,6 +56,7 @@ import { InputDir1Directive } from './lekhraj-lib/common/input-dir1.directive';
     FormsModule,
     CourseAppModule,
     MDBBootstrapModule.forRoot(),
+    AngularFontAwesomeModule,
   ],
 
   providers: [AuthService, AuthGuard, TrainingService],
