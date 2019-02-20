@@ -29,6 +29,7 @@ export class AppComponent implements OnInit {
         .pipe(
           select(isLoggedIn) 
           //Select operate check the data with previous state ans wont emit anything if  there is no differecnce  with previous data.
+          //select operator  is eliminating the duploacte for this  observable.
           //.map( state => state.auth.isLoggedIn) // older code. this is not optimized and will leazd performance issue  if  there is complex involved in calculation.
         );
 
