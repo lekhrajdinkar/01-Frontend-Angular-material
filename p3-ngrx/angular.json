@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-pwa-course": {
+    "angular-ngrx-course": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -21,7 +21,7 @@
               "src/favicon.ico"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -36,8 +36,6 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "serviceWorker":true,
-              "ngswConfigPath":"src/ngsw-config.json",
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -50,18 +48,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-pwa-course:build"
+            "browserTarget": "angular-ngrx-course:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-pwa-course:build:production"
+              "browserTarget": "angular-ngrx-course:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-pwa-course:build"
+            "browserTarget": "angular-ngrx-course:build"
           }
         },
         "test": {
@@ -73,7 +71,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "scripts": [],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "assets": [
               "src/assets",
@@ -88,12 +86,14 @@
               "src/tsconfig.app.json",
               "src/tsconfig.spec.json"
             ],
-            "exclude": []
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
     },
-    "angular-pwa-course-e2e": {
+    "angular-ngrx-course-e2e": {
       "root": "",
       "sourceRoot": "",
       "projectType": "application",
@@ -102,7 +102,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "angular-pwa-course:serve"
+            "devServerTarget": "angular-ngrx-course:serve"
           }
         },
         "lint": {
@@ -111,20 +111,25 @@
             "tsConfig": [
               "e2e/tsconfig.e2e.json"
             ],
-            "exclude": []
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
     }
   },
-  "defaultProject": "angular-pwa-course",
+  "defaultProject": "angular-ngrx-course",
   "schematics": {
-    "@schematics/angular:component": {
+    "@ngrx/schematics:component": {
       "prefix": "",
-      "styleext": "css"
+      "styleext": "scss"
     },
-    "@schematics/angular:directive": {
+    "@ngrx/schematics:directive": {
       "prefix": ""
     }
+  },
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
   }
 }
